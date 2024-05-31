@@ -119,9 +119,9 @@ if __name__ == "__main__":
     print(customer.view_cart())  # Print the current state of the cart
     customer.save_cart("my_cart")  # Save the cart to a file
 
-    # customer_two = Customer("asmaa", "asmaa@gmail.com")
-    # cart3 = [{"Google Pixel 6": 700, "Adidas Ultraboost": 200}]
-    # customer_two.add_product(cart3)
-    # customer_two.add_product(cart)
-    # print(customer_two.view_cart())
-    # customer_two.save_cart("asmaa_cart")
+    customer_two = Customer("asmaa", "asmaa@gmail.com")
+    cart3 = [{"Google Pixel 6": 700, "Adidas Ultraboost": 200}]
+    customer_two.add_product(cart3)
+    customer_two.add_product(cart)
+    print(customer_two.view_cart())
+    customer_two.save_cart("asmaa_cart")
