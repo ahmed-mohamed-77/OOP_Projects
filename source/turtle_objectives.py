@@ -1,7 +1,6 @@
 from turtle import Turtle, title, exitonclick, resetscreen
 from typing import List
 import random
-
 def main():
     while True:
         try:
@@ -15,10 +14,12 @@ def main():
                 print("exiting..".upper())
                 break
             
-            # chick the user input
+            # check the user input
             if choice not in shapes:
                 raise ValueError("please select from the given shapes".upper())
-            resetscreen
+            
+            resetscreen()
+            
             if choice == "pentagon":
                 pentagon = Turtle()
                 colors = ["#030637", "#3C0753", "#720455", "#910A67", "#49108B"]
@@ -27,31 +28,33 @@ def main():
             elif choice == "square":
                 squ_number = int(input("enter number of squares: ").strip())
                 
-                if not isinstance(squ_number, int) and squ_number > 0:
+                if squ_number <= 0:
                     raise ValueError("must be positive number")
                 
                 square = Turtle()
                 colors = ["#0F0F0F", "#232D3F", "#005B41", "#008170","#04364A",
                             "#176B87", "#64CCC5", "#DAFFFB", "#C5E898", "#29ADB2", "#0766AD"]
                 solid_squares(turtle=square, colors=colors, number=squ_number)
+            
             elif choice == "circle":
-                circle = Turtle()
                 cir_number = int(input("enter number of circles: ").strip())
                 
-                if not isinstance(cir_number, int) and cir_number > 0:
+                if cir_number <= 0:
                     raise ValueError("must be positive number")
                 
+                circle = Turtle()
                 colors = ["#0F0F0F", "#232D3F", "#005B41", "#008170","#04364A",
                     "#176B87", "#64CCC5", "#DAFFFB", "#C5E898", "#29ADB2", "#0766AD"]
                 
                 circle_canvas(turtle=circle, colors=colors, number=cir_number)
+            
             elif choice == "triangle":
-                triangle = Turtle()
                 tri_number = int(input("enter number of triangles: ").strip())
                 
-                if not isinstance(tri_number, int) and tri_number > 0:
+                if tri_number <= 0:
                     raise ValueError("must be positive number")
                 
+                triangle = Turtle()
                 colors = ["#0F0F0F", "#232D3F", "#005B41", "#008170","#04364A",
                     "#176B87", "#64CCC5", "#DAFFFB", "#C5E898", "#29ADB2", "#0766AD"]
                 triangle_canvas(turtle=triangle, colors=colors, number=tri_number)
@@ -59,6 +62,7 @@ def main():
         except ValueError as e:
             print(f"\nERROR {e}\n")
             print("*" * 30)
+
         
         
 # draw pentagon each side with a different color 
